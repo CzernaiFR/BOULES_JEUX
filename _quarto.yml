@@ -1,0 +1,58 @@
+project:
+  type: book
+  render:
+    - "*.qmd"
+  output-dir: docs
+
+lang: fr-FR
+fontsize: 1.20em
+
+reference-location: margin
+cap-location: margin
+citation-location: margin
+
+book:
+  title: "Des boules et des jeux"
+  author:
+    name: "Roger MARTIN"
+    email: "czernai@gmail.com"
+  date: last-modified
+  
+  page-footer: 
+    border: true
+    center: "Merci à 
+    $R$ [*⇑*](https://cran.r-project.org/),
+        **RStudio** [*⇑*](https://posit.co/download/rstudio-desktop/),
+        Quarto [*⇑*](https://quarto.org/),
+        Git [*⇑*](https://git-scm.com/), 
+        GitHub [*⇑*](https://github.com/)"
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+  
+  date-format: "dddd D MMMM YYYY"
+  chapters:
+    - index.qmd
+    - EuroDreams.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    mermaid: 
+      theme: neutral
+    theme: 
+      dark: [darkly, theme-dark.scss]
+      light: [flatly, theme-light.scss]
+    toc: true
+    grid:
+      margin-width: 225px
+      sidebar-width: 225px
+      body-width: 999px
+      gutter-width: 0.5rem
+
+
+

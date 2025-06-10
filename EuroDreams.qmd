@@ -1,0 +1,344 @@
+---
+author: Roger MARTIN
+date: last-modified
+date-format: "dddd D MMMM YYYY"
+---
+
+# EuroDreams
+
+## Récupérer l'historique des tirages
+
+La FDJ met à disposition l'historique des tirages [*Eurodreams*](https://www.fdj.fr/jeux-de-tirage/eurodreams/historique). Et pour analyser des données, il faut des ... données.
+
+Il faut donc commencer par charger les `library()` nécessaires.
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
+library(utils)
+library(zip)
+```
+
+```{r}
+#| include: false
+
+# URL du fichiers de données des tirages 
+#   sur le site FDJ
+
+url <- "https://www.sto.api.fdj.fr/anonymous/service-draw-info/v3/documentations/1a2b3c4d-9876-4562-b3fc-2c963f66afa5"
+
+download.file(url, "donnees.zip",  mode = "wb")
+unzip("donnees.zip", exdir = "donnees", overwrite = TRUE)
+```
+
+```{r}
+#| error: false
+#| message: false
+#| warning: false
+# noms des colonnes à garder
+noms <- c("jour_de_tirage", "date_de_tirage",
+          "boules_gagnantes_en_ordre_croissant",
+          "numero_dream")
+
+donnees <- readr::read_csv2("donnees/eurodreams_202311.csv", 
+                       col_select = noms)
+# affiche les 6 premières lignes
+#   du tableau `donnees`
+head(donnees)
+```
+
+```{r}
+# rendre les noms plus accessibles
+
+# le vecteur `noms` contient les noms par paires
+#   "nonveau nom" = "ancien nom"
+noms <- c(jt = "jour_de_tirage",
+          dt = "date_de_tirage",
+          bg = "boules_gagnantes_en_ordre_croissant",
+          nd = "numero_dream")
+donnees <- rename(donnees, all_of(noms))
+
+# remplace LUNDI par L et JEUDI par J
+donnees$jt <- recode(donnees$jt, "LUNDI" = "L", "JEUDI" = "J")
+head(donnees)
+```
+
+```{r}
+# extrait tous les tirages de la 
+#   colonne `donnees$bg`
+b <- str_extract_all(donnees$bg, "\\d+")
+
+# mettre b à plat
+b1 <- unlist(b)
+
+# transforme en nombre
+b1 <- as.integer(b1)
+
+# tranforme la `list()` en `matrix()`
+b2 <- matrix(data = b1, ncol = 6, byrow = TRUE)
+
+head(b2)
+```
+
+```{r}
+# affecter les colonnes de la matrice au
+#   jeu de données `donnees`
+
+donnees <- donnees %>% 
+  mutate(n1 = b2[,1], .after = bg) %>% 
+  mutate(n2 = b2[,2], .after = n1) %>%
+  mutate(n3 = b2[,3], .after = n2) %>% 
+  mutate(n4 = b2[,4], .after = n3) %>% 
+  mutate(n5 = b2[,5], .after = n4) %>% 
+  mutate(n6 = b2[,6], .after = n5) %>% 
+  mutate(bg = NULL) 
+```
+
+```{r}
+# transforme les jours de tirage `jt` en facteur
+donnees$jt <- donnees$jt %>%  
+  factor(levels = c("L", "J"))
+
+# transforme les dates en dates compréhensibles 
+#   par R
+donnees$dt <- dmy(donnees$dt)
+
+# R sait que `dt` est une colonnes de dates
+#   ranger les tirages en ordre déscendant
+#   ils sont ascendants d'origine
+donnees <- arrange(donnees, dt)
+head(donnees)
+```
+
+```{r}
+summary(donnees)
+```
+
+```{r}
+# Nettoyage
+rm(b, b1, b2, noms, url)
+```
+
+## Fonctions
+### Récupérer les données
+Les 3 fonctions ci-dessous permettent de récupérer des éléments dans le jeu de données `donnees`.
+
+```{r}
+recup_n1_n6 <-              # récupère les 6 numéros
+  function(x)               #   du tirage numéro x
+    donnees %>% 
+    slice(x) %>% 
+    select(n1:n6) %>% 
+    as_vector()
+```
+
+```{r}
+recup_nd <-                 # récupère le numéro 
+  function(x)               # dream
+    donnees %>%             # du tirage numéro x
+    slice(x) %>% 
+    select(nd) %>% 
+    as_vector()
+```
+
+```{r}
+recup_jt <-                 # récupère le jour du
+  function(x)               # du tirage numéro x
+    donnees %>% 
+    slice(x) %>% 
+    select(jt) %>% 
+    as_vector()
+```
+
+
+
+
+Pour gérer les statistiques, on va utiliser des `tibble()` :
+
+```{r}
+nums <- tibble(
+  # Première colonne pour la liste des numéros
+  nu = c(1:40),
+  # Pour les sorties de tous les numéros
+  so = rep.int(0, 40),
+  # Pour les sorties de tous les numéros LUNDI
+  so_L = rep.int(0, 40),
+  # Pour les sorties de tous les numéros JEUDI
+  so_J = rep.int(0, 40),
+  
+  # Pour les écarts de tous les numéros
+  ec = rep.int(0, 40),
+  # Pour les écarts de tous les numéros LUNDI
+  ec_L = rep.int(0, 40),
+  # Pour les écarts de tous les numéros JEUDI
+  ec_J = rep.int(0, 40)
+)
+```
+
+et pareil pour les numéros **dream** :
+
+```{r}
+dreams <- tibble(
+  # Première colonne pour la liste des nums dream
+  nu = c(1:5),
+  # Pour les sorties de tous les nums dream
+  so = rep.int(0, 5),
+  # Pour les sorties des nums dream LUNDI
+  so_L = rep.int(0, 5),
+  # Pour les sorties des nums dream JEUDI
+  so_J = rep.int(0, 5),
+  
+  # Pour les écarts de tous les nums dream
+  ec = rep.int(0, 5),
+  # Pour les écarts des nums dream LUNDI
+  ec_L = rep.int(0, 5),
+  # Pour les écarts des nums dream JEUDI
+  ec_J = rep.int(0, 5)
+)
+```
+
+## Premiers calculs
+
+On va prendre le tiers pour les données initiales.
+
+Remplir les colonnes des `nums` et `dream`. Et commencer à créer des données. Récupérer le nombre de tirages et en retenir $\frac{1}{3}$.
+
+```{r}
+# nombre de lignes pour commencer
+nbre_lignes <- round(nrow(donnees) / 3)
+nbre_lignes
+```
+
+Puis, itérer[@noauthor_iteration_2025] sur les `nbre_lignes` premières lignes de `donnees`
+
+```{r}
+for (i in 1:nbre_lignes) {
+  j <- recup_jt(i)      #
+  n <- recup_n1_n6(i)
+  d <- recup_nd(i)
+  
+  # incrémenter toutes les sorties
+  nums$so[n] <- nums$so[n] + 1
+  dreams$so[d] <- dreams$so[d] + 1
+  
+  # mettre tous les écarts à jour
+  nums$ec <- nums$ec + 1
+  nums$ec[n] <- 0
+  dreams$ec <- dreams$ec + 1
+  dreams$ec[d] <- 0
+  
+  # données du Lundi
+  if(j == "L"){
+    # incrémenter les sorties
+    nums$so_L[n] <- nums$so_L[n] + 1
+    dreams$so_L[d] <- dreams$so_L[d] + 1
+    
+    # màj écarts
+    nums$ec_L <- nums$ec_L + 1
+    nums$ec_L[n] <- 0
+    dreams$ec_L <- dreams$ec_L + 1
+    dreams$ec_L[d] <- 0
+  }
+  
+  # données du Jeudi
+  else if(j == "J"){
+    # incrémenter les sorties
+    nums$so_J[n] <- nums$so_J[n] + 1
+    dreams$so_J[d] <- dreams$so_J[d] + 1
+    
+     # màj écarts
+    nums$ec_J <- nums$ec_J + 1
+    nums$ec_J[n] <- 0
+    dreams$ec_J <- dreams$ec_J + 1
+    dreams$ec_J[d] <- 0
+    
+  }
+  
+  # Erreur : le jour ne correspond ni à L ni à J
+  #   improbable mais toujours être prudent
+  else{
+    print("Erreur de jour (J ou L) ligne ", i,
+          "de la base de donnée")
+  }
+  
+}
+```
+
+Pour les écarts[@noauthor_espace_2023], c'est « presque » pareil. Tous les écarts sont à $0$ au départ[^eurodreams-1].
+
+[^eurodreams-1]: L'écart d'un numéro est ***toujours*** l'écart par rapport au tirage précédent lors duquel ce numéro est sorti et il n'y avait pas de tirage avant le premier.
+
+On commence par augmenter ***tous*** les écarts de $1$, puis on met à $0$ les écarts des numéros du tirage examiné.
+
+
+```{r}
+nums
+```
+
+```{r}
+summary(nums)
+```
+
+
+### Compter les boules
+
+Vu que ces données changent à chaque tirage, il faudrait envisager une autre méthode pour identifier les numéros.
+
+D'un commun accord avec moi-même, j'ai choisi de classer les sorties et les écarts.
+
+$R$ et `dplyr` fournissent de nombreuses fonctions de classement. On va utiliser `percent_rank()`.
+
+```{r}
+a <- tibble(N = c(55, 44, 33, 22, 11, 1, 11, 55, 66))
+a <- a |> mutate(CLAS = 
+                   round(percent_rank(a$N)*100))
+a |> arrange(CLAS)
+```
+
+$0$ est la plus petite valeur et la plus grande valeur est $100$.
+
+
+
+
+Donc classement.
+```{r}
+numsCL <- tibble(
+  nu = nums$nu,
+  so = min_rank(nums$so),
+  so_L = min_rank(nums$so_L),
+  so_J = min_rank(nums$so_J),
+  ec = min_rank(nums$ec),
+  ec_L = min_rank(nums$ec_L),
+  ec_J = min_rank(nums$ec_J)
+)
+
+nums
+```
+
+```{r}
+numsCL
+```
+
+Et pareil pour les numéros `dreams`
+```{r}
+dreamsCL <- tibble(
+  nu = dreams$nu,
+  so = min_rank(dreams$so),
+  so_L = min_rank(dreams$so_L),
+  so_J = min_rank(dreams$so_J),
+  ec = min_rank(dreams$ec),
+  ec_L = min_rank(dreams$ec_L),
+  ec_J = min_rank(dreams$ec_J)
+)
+
+dreams
+```
+
+```{r}
+dreamsCL
+```
+
+
+
+
