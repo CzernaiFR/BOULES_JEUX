@@ -1,0 +1,20 @@
+{
+  "intro.qmd": {
+    "intro.html": "9c9541b1"
+  },
+  "index.qmd": {
+    "index.html": "1e1a117b"
+  },
+  "summary.qmd": {
+    "summary.html": "91e64ca0"
+  },
+  "references.qmd": {
+    "references.html": "9c9fad2e"
+  },
+  "EuroDreams.qmd": {
+    "EuroDreams.html": "c1082213"
+  },
+  "aide.qmd": {
+    "aide.html": "e0697a2f"
+  }
+}
