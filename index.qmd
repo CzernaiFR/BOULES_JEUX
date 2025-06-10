@@ -1,0 +1,92 @@
+---
+date: last-modified
+date-format: "dddd D MMMM YYYY"
+---
+
+# Boules ?
+
+Les *boules* sont celles de la « Française des Jeux » et pas la « Fédération des Jongleurs », qui existe pourtant !
+
+Je vais essayer[^index-1] de voir :
+
+[^index-1]: essayer est le mot le plus important de cette phrase
+
+-   s'il est intéressant de lister des centaines de lignes de tirages successifs pour décortiquer les tirages ;
+
+-   s'il est possible de se baser sur le nombre de sorties, les écarts des numéros, les paires ou triplés ;
+
+-   ou si les tirages ne sont influencés que par :
+
+    -   la vitesse vent ;
+    -   la flexibilité de la queue de la vache ;
+    -   l'âge du capitaine ;
+    -   une combinaison de tout ça ;
+    -   voire autre chose…
+
+## Technique
+
+Tout ce qui suit a été réalisé grâce à quelques outils bien pratiques.
+
+### RStudio
+
+C'est un IDE, *integrated development environment*, [voir: @noauthor_environnement_2025] donc un environnement de développement intégré. C'est un outil informatique qui comprend un éditeur de texte, un traitement de code informatique et, pour RStudio, un système de mise en page.
+
+Pour le code, RStudio gère :
+
+-   du code $R$ [voir @noauthor_r_2025] qui est utilisé ici ;
+
+-   du [`code Python`](https://fr.wikipedia.org/wiki/Python_(langage)) ;
+
+-   du [`code Julia`](https://fr.wikipedia.org/wiki/Julia_(langage))
+
+### R
+
+[R](https://cran.r-project.org/) est un logiciel libre et gratuit. En très rapide, il permet de faire à peu-prêt ce que pourrait faire un Excel dopé par les substances qui restent à être inventées 😁.
+
+## Objectifs
+
+Certainement trop ambitieux. Je vais me pencher sur trois jeux :
+
+### EuroDreams
+
+Je pense que c'est le plus simple [voir @noauthor_eurodreams_2025]. Choisir 6 numéros parmi 40 et 1 numéro « *dream* » parmi 5. On a donc : $$
+{40 \choose 5} \times {5 \choose 1} = 3\,290\,040
+$$ Demandons à $R$ de vérifier :
+
+```{r}
+choose(40, 5) * choose(5, 1)
+```
+
+$3\,290\,040$ combinaisons possibles. Quand même !
+
+Il y en a pourtant beaucoup moins qu'au Loto ou EuroMillions.
+
+Il y a deux tirages par semaine, le lundi et le jeudi.
+
+### Loto
+
+Deuxième candidat [voir @noauthor_loto_2025]. Depuis 2008, il faut trouver 5 numéros parmi 49 et 1 numéro « *chance*[^index-2] » parmi 10. Donc : $${49 \choose 5} \times {10 \choose 1} = 19\,068\,840$$ La vérification :
+
+[^index-2]: très mal nommés
+
+```{r}
+choose(49, 5) * choose(10, 1)
+```
+
+$19\,068\,840$ combinaisons possibles. Plus de dix-neuf millions. 3 Tirages par semaine, le lundi, le mercredi et le samedi.
+
+### EuroMillions
+
+Dernier candidat [voir @noauthor_euromillions_2025]. Là, c'est du lourd ! Depuis fin septembre 2016, il faut choisir 5 numéros parmi 50 possibles et 2 « *étoiles* » parmi 12. Donc le nombre de combinaisons est stratosphérique :
+
+$${50 \choose 5} \times {12 \choose 2} = 139\,838\,160$$.
+
+```{r}
+choose(50, 5) * choose(12, 2)
+```
+
+Et oui. Plus de cent trente-neuf millions huit cent trente-huit milles combinaisons !
+
+## Déroulement
+
+Le déroulement sera le

@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Des boules et des jeux",
+    "section": "",
+    "text": "1 Boules ?\nLes boules sont celles de la « Française des Jeux » et pas la « Fédération des Jongleurs », qui existe pourtant !\nJe vais essayer1 de voir :",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Boules ?</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.\nblahhhh",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#objectifs",
+    "href": "index.html#objectifs",
+    "title": "Des boules et des jeux",
+    "section": "1.2 Objectifs",
+    "text": "1.2 Objectifs\nCertainement trop ambitieux. Je vais me pencher sur trois jeux :\n\n1.2.1 EuroDreams\nJe pense que c’est le plus simple (voir « EuroDreams » 2025). Choisir 6 numéros parmi 40 et 1 numéro « dream » parmi 5. On a donc : \\[\n{40 \\choose 5} \\times {5 \\choose 1} = 3\\,290\\,040\n\\] Demandons à \\(R\\) de vérifier :\n\n« EuroDreams ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=EuroDreams&oldid=224660005.\n\nchoose(40, 5) * choose(5, 1)\n\n[1] 3290040\n\n\n\\(3\\,290\\,040\\) combinaisons possibles. Quand même !\nIl y en a pourtant beaucoup moins qu’au Loto ou EuroMillions.\nIl y a deux tirages par semaine, le lundi et le jeudi.\n\n\n1.2.2 Loto\nDeuxième candidat (voir « Loto (jeu de la Française des jeux) » 2025). Depuis 2008, il faut trouver 5 numéros parmi 49 et 1 numéro « chance2 » parmi 10. Donc : \\[{49 \\choose 5} \\times {10 \\choose 1} = 19\\,068\\,840\\] La vérification :\n\n« Loto (jeu de la Française des jeux) ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=Loto_(jeu_de_la_Fran%C3%A7aise_des_jeux)&oldid=225358210.\n2 très mal nommés\nchoose(49, 5) * choose(10, 1)\n\n[1] 19068840\n\n\n\\(19\\,068\\,840\\) combinaisons possibles. Plus de dix-neuf millions. 3 Tirages par semaine, le lundi, le mercredi et le samedi.\n\n\n1.2.3 EuroMillions\nDernier candidat (voir « EuroMillions » 2025). Là, c’est du lourd ! Depuis fin septembre 2016, il faut choisir 5 numéros parmi 50 possibles et 2 « étoiles » parmi 12. Donc le nombre de combinaisons est stratosphérique :\n\n« EuroMillions ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=EuroMillions&oldid=224552789.\n\\[{50 \\choose 5} \\times {12 \\choose 2} = 139\\,838\\,160\\].\n\nchoose(50, 5) * choose(12, 2)\n\n[1] 139838160\n\n\nEt oui. Plus de cent trente-neuf millions huit cent trente-huit milles combinaisons !",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Boules ?</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#déroulement",
+    "href": "index.html#déroulement",
+    "title": "Des boules et des jeux",
+    "section": "1.3 Déroulement",
+    "text": "1.3 Déroulement\nLe déroulement sera le",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Boules ?</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Références",
+    "section": "",
+    "text": "“Environnement de Développement.” 2025. Wikipédia.\nhttps://fr.wikipedia.org/w/index.php?title=Environnement_de_d%C3%A9veloppement&oldid=223195261.\n\n\n“EuroDreams.” 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=EuroDreams&oldid=224660005.\n\n\n“EuroMillions.” 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=EuroMillions&oldid=224552789.\n\n\n“Loto (Jeu de La Française Des Jeux).” 2025.\nWikipédia. https://fr.wikipedia.org/w/index.php?title=Loto_(jeu_de_la_Fran%C3%A7aise_des_jeux)&oldid=225358210.\n\n\n“R (Langage).” 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=R_(langage)&oldid=224926572.",
+    "crumbs": [
+      "Références"
+    ]
+  },
+  {
+    "objectID": "index.html#technique",
+    "href": "index.html#technique",
+    "title": "Des boules et des jeux",
+    "section": "1.1 Technique",
+    "text": "1.1 Technique\nTout ce qui suit a été réalisé grâce à quelques outils bien pratiques.\n\n1.1.1 RStudio\nC’est un IDE, integrated development environment, (voir: « Environnement de développement » 2025) donc un environnement de développement intégré. C’est un outil informatique qui comprend un éditeur de texte, un traitement de code informatique et, pour RStudio, un système de mise en page.\n\n« Environnement de développement ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=Environnement_de_d%C3%A9veloppement&oldid=223195261.\nPour le code, RStudio gère :\n\ndu code \\(R\\) (voir « R (langage) » 2025) qui est utilisé ici ;\ndu code Python ;\ndu code Julia\n\n\n« R (langage) ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=R_(langage)&oldid=224926572.\n\n\n1.1.2 R\nR est un logiciel libre et gratuit. En très rapide, il permet de faire à peu-prêt ce que pourrait faire un Excel dopé par les substances qui restent à être inventées 😁.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Boules ?</span>"
+    ]
+  },
+  {
+    "objectID": "EuroDreams.html",
+    "href": "EuroDreams.html",
+    "title": "2  EuroDreams",
+    "section": "",
+    "text": "2.1 Récupérer l’historique des tirages\nLa FDJ met à disposition l’historique des tirages Eurodreams. Et pour analyser des données, il faut des … données.\nIl faut donc commencer par charger les library() nécessaires.\nlibrary(tidyverse, quietly = TRUE, warn.conflicts = FALSE)\nlibrary(utils)\nlibrary(zip)\n# noms des colonnes à garder\nnoms &lt;- c(\"jour_de_tirage\", \"date_de_tirage\",\n          \"boules_gagnantes_en_ordre_croissant\",\n          \"numero_dream\")\n\ndonnees &lt;- readr::read_csv2(\"donnees/eurodreams_202311.csv\", \n                       col_select = noms)\n# affiche les 6 premières lignes\n#   du tableau `donnees`\nhead(donnees)\n\n# A tibble: 6 × 4\n  jour_de_tirage date_de_tirage boules_gagnantes_en_ordre_croissant numero_dream\n  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;                                      &lt;dbl&gt;\n1 JEUDI          29/05/2025     -16-18-19-21-22-32-                            5\n2 LUNDI          26/05/2025     -2-17-18-21-25-35-                             2\n3 JEUDI          22/05/2025     -1-5-15-26-31-36-                              4\n4 LUNDI          19/05/2025     -8-15-26-32-35-38-                             2\n5 JEUDI          15/05/2025     -11-15-24-26-32-37-                            2\n6 LUNDI          12/05/2025     -4-15-19-21-25-37-                             2\n# rendre les noms plus accessibles\n\n# le vecteur `noms` contient les noms par paires\n#   \"nonveau nom\" = \"ancien nom\"\nnoms &lt;- c(jt = \"jour_de_tirage\",\n          dt = \"date_de_tirage\",\n          bg = \"boules_gagnantes_en_ordre_croissant\",\n          nd = \"numero_dream\")\ndonnees &lt;- rename(donnees, all_of(noms))\n\n# remplace LUNDI par L et JEUDI par J\ndonnees$jt &lt;- recode(donnees$jt, \"LUNDI\" = \"L\", \"JEUDI\" = \"J\")\nhead(donnees)\n\n# A tibble: 6 × 4\n  jt    dt         bg                     nd\n  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;               &lt;dbl&gt;\n1 J     29/05/2025 -16-18-19-21-22-32-     5\n2 L     26/05/2025 -2-17-18-21-25-35-      2\n3 J     22/05/2025 -1-5-15-26-31-36-       4\n4 L     19/05/2025 -8-15-26-32-35-38-      2\n5 J     15/05/2025 -11-15-24-26-32-37-     2\n6 L     12/05/2025 -4-15-19-21-25-37-      2\n# extrait tous les tirages de la \n#   colonne `donnees$bg`\nb &lt;- str_extract_all(donnees$bg, \"\\\\d+\")\n\n# mettre b à plat\nb1 &lt;- unlist(b)\n\n# transforme en nombre\nb1 &lt;- as.integer(b1)\n\n# tranforme la `list()` en `matrix()`\nb2 &lt;- matrix(data = b1, ncol = 6, byrow = TRUE)\n\nhead(b2)\n\n     [,1] [,2] [,3] [,4] [,5] [,6]\n[1,]   16   18   19   21   22   32\n[2,]    2   17   18   21   25   35\n[3,]    1    5   15   26   31   36\n[4,]    8   15   26   32   35   38\n[5,]   11   15   24   26   32   37\n[6,]    4   15   19   21   25   37\n# affecter les colonnes de la matrice au\n#   jeu de données `donnees`\n\ndonnees &lt;- donnees %&gt;% \n  mutate(n1 = b2[,1], .after = bg) %&gt;% \n  mutate(n2 = b2[,2], .after = n1) %&gt;%\n  mutate(n3 = b2[,3], .after = n2) %&gt;% \n  mutate(n4 = b2[,4], .after = n3) %&gt;% \n  mutate(n5 = b2[,5], .after = n4) %&gt;% \n  mutate(n6 = b2[,6], .after = n5) %&gt;% \n  mutate(bg = NULL)\n# transforme les jours de tirage `jt` en facteur\ndonnees$jt &lt;- donnees$jt %&gt;%  \n  factor(levels = c(\"L\", \"J\"))\n\n# transforme les dates en dates compréhensibles \n#   par R\ndonnees$dt &lt;- dmy(donnees$dt)\n\n# R sait que `dt` est une colonnes de dates\n#   ranger les tirages en ordre déscendant\n#   ils sont ascendants d'origine\ndonnees &lt;- arrange(donnees, dt)\nhead(donnees)\n\n# A tibble: 6 × 9\n  jt    dt            n1    n2    n3    n4    n5    n6    nd\n  &lt;fct&gt; &lt;date&gt;     &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1 L     2023-11-06    10    13    14    25    30    35     5\n2 J     2023-11-09    14    16    19    31    32    37     2\n3 L     2023-11-13     1     6    25    26    33    39     2\n4 J     2023-11-16     5    11    13    18    25    27     5\n5 L     2023-11-20     6    13    18    25    26    32     3\n6 J     2023-11-23     4    15    22    23    28    35     4\nsummary(donnees)\n\n jt           dt                   n1               n2              n3       \n L:82   Min.   :2023-11-06   Min.   : 1.000   Min.   : 2.00   Min.   : 3.00  \n J:82   1st Qu.:2024-03-27   1st Qu.: 2.000   1st Qu.: 8.00   1st Qu.:14.00  \n        Median :2024-08-17   Median : 4.000   Median :12.00   Median :18.00  \n        Mean   :2024-08-17   Mean   : 5.768   Mean   :12.04   Mean   :17.93  \n        3rd Qu.:2025-01-06   3rd Qu.: 8.000   3rd Qu.:16.00   3rd Qu.:22.00  \n        Max.   :2025-05-29   Max.   :18.000   Max.   :27.00   Max.   :33.00  \n       n4              n5              n6              nd       \n Min.   : 9.00   Min.   :10.00   Min.   :16.00   Min.   :1.000  \n 1st Qu.:20.00   1st Qu.:25.00   1st Qu.:32.00   1st Qu.:2.000  \n Median :23.00   Median :30.00   Median :37.00   Median :3.000  \n Mean   :23.63   Mean   :29.46   Mean   :34.95   Mean   :2.915  \n 3rd Qu.:28.00   3rd Qu.:33.25   3rd Qu.:39.00   3rd Qu.:4.000  \n Max.   :37.00   Max.   :38.00   Max.   :40.00   Max.   :5.000\n# Nettoyage\nrm(b, b1, b2, noms, url)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EuroDreams</span>"
+    ]
+  },
+  {
+    "objectID": "EuroDreams.html#stats-de-base",
+    "href": "EuroDreams.html#stats-de-base",
+    "title": "2  EuroDreams",
+    "section": "2.2 Stats de base",
+    "text": "2.2 Stats de base\nLes 3 fonctions ci-dessous permettent de récupérer des éléments dans le jeu de données donnees.\n\nrecup_n1_n6 &lt;-              # récupère les 6 numéros\n  function(x)               #   du tirage numéro x\n    donnees %&gt;% \n    slice(x) %&gt;% \n    select(n1:n6) %&gt;% \n    as_vector()\n\n\nrecup_nd &lt;-                 # récupère le numéro dream\n  function(x)               #   du tirage numéro x\n    donnees %&gt;% \n    slice(x) %&gt;% \n    select(nd) %&gt;% \n    as_vector()\n\n\nrecup_jt &lt;-                 # récupère le jour du tirage\n  function(x)               #   du tirage numéro x\n    donnees %&gt;% \n    slice(x) %&gt;% \n    select(jt) %&gt;% \n    as_vector()\n\nPour gérer les statistiques, on va utiliser des tibble() :\n\nnums &lt;- tibble(\n  # Première colonne pour la liste des numéros\n  nu = c(1:40),\n  # Pour les sorties de tous les numéros\n  so = rep.int(0, 40),\n  # Pour les sorties de tous les numéros LUNDI\n  so_L = rep.int(0, 40),\n  # Pour les sorties de tous les numéros JEUDI\n  so_J = rep.int(0, 40),\n  \n  # Pour les écarts de tous les numéros\n  ec = rep.int(0, 40),\n  # Pour les écarts de tous les numéros LUNDI\n  ec_L = rep.int(0, 40),\n  # Pour les écarts de tous les numéros JEUDI\n  ec_J = rep.int(0, 40)\n)\n\net pareil pour les numéros dream :\n\ndreams &lt;- tibble(\n  # Première colonne pour la liste des nums dream\n  nu = c(1:5),\n  # Pour les sorties de tous les nums dream\n  so = rep.int(0, 5),\n  # Pour les sorties des nums dream LUNDI\n  so_L = rep.int(0, 5),\n  # Pour les sorties des nums dream JEUDI\n  so_J = rep.int(0, 5),\n  \n  # Pour les écarts de tous les nums dream\n  ec = rep.int(0, 5),\n  # Pour les écarts des nums dream LUNDI\n  ec_L = rep.int(0, 5),\n  # Pour les écarts des nums dream JEUDI\n  ec_J = rep.int(0, 5)\n)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EuroDreams</span>"
+    ]
+  },
+  {
+    "objectID": "EuroDreams.html#premiers-calculs",
+    "href": "EuroDreams.html#premiers-calculs",
+    "title": "2  EuroDreams",
+    "section": "2.3 Premiers calculs",
+    "text": "2.3 Premiers calculs\nOn va prendre le tiers pour les données initiales.\nRemplir les colonnes des nums et dream. Et commencer à créer des données. Récupérer le nombre de tirages et en retenir \\(\\frac{1}{3}\\).\n\n# nombre de lignes pour commencer\nnbre_lignes &lt;- round(nrow(donnees) / 3)\nnbre_lignes\n\n[1] 55\n\n\nPuis, itérer(« Itération » 2025) sur les nbre_lignes premières lignes de donnees\n\n« Itération ». 2025. Wikipédia. https://fr.wikipedia.org/w/index.php?title=It%C3%A9ration&oldid=223001118.\n\nfor (i in 1:nbre_lignes) {\n  j &lt;- recup_jt(i)      #\n  n &lt;- recup_n1_n6(i)\n  d &lt;- recup_nd(i)\n  \n  # incrémenter toutes les sorties\n  nums$so[n] &lt;- nums$so[n] + 1\n  dreams$so[d] &lt;- dreams$so[d] + 1\n  \n  # mettre tous les écarts à jour\n  nums$ec &lt;- nums$ec + 1\n  nums$ec[n] &lt;- 0\n  dreams$ec &lt;- dreams$ec + 1\n  dreams$ec[d] &lt;- 0\n  \n  # données du Lundi\n  if(j == \"L\"){\n    # incrémenter les sorties\n    nums$so_L[n] &lt;- nums$so_L[n] + 1\n    dreams$so_L[d] &lt;- dreams$so_L[d] + 1\n    \n    # màj écarts\n    nums$ec_L &lt;- nums$ec_L + 1\n    nums$ec_L[n] &lt;- 0\n    dreams$ec_L &lt;- dreams$ec_L + 1\n    dreams$ec_L[d] &lt;- 0\n  }\n  \n  # données du Jeudi\n  else if(j == \"J\"){\n    # incrémenter les sorties\n    nums$so_J[n] &lt;- nums$so_J[n] + 1\n    dreams$so_J[d] &lt;- dreams$so_J[d] + 1\n    \n     # màj écarts\n    nums$ec_J &lt;- nums$ec_J + 1\n    nums$ec_J[n] &lt;- 0\n    dreams$ec_J &lt;- dreams$ec_J + 1\n    dreams$ec_J[d] &lt;- 0\n    \n  }\n  \n  # Erreur : le jour ne correspond ni à L ni à J\n  #   improbable mais toujours être prudent\n  else{\n    print(\"Erreur de jour (J ou L) ligne \", i,\n          \"de la base de donnée\")\n  }\n  \n}\n\nPour les écarts(« Espace uniforme » 2023), c’est « presque » pareil. Tous les écarts sont à \\(0\\) au départ1.\n\n« Espace uniforme ». 2023. Wikipédia. https://fr.wikipedia.org/w/index.php?title=Espace_uniforme&oldid=209421187.\n1 L’écart d’un numéro est toujours l’écart par rapport au tirage précédent lors duquel ce numéro est sorti et il n’y avait pas de tirage avant le premier.On commence par augmenter tous les écarts de \\(1\\), puis on met à \\(0\\) les écarts des numéros du tirage examiné.\n\nnums\n\n# A tibble: 40 × 7\n      nu    so  so_L  so_J    ec  ec_L  ec_J\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     1     6     3     3     4     2     6\n 2     2    13     8     5     5     4     2\n 3     3    12     5     7    10     5     7\n 4     4     4     1     3     3    13     1\n 5     5     7     2     5    25    14    12\n 6     6     8     6     2     1     3     0\n 7     7     6     3     3     1     1     0\n 8     8     9     4     5    15     8     7\n 9     9     6     3     3     0     0     5\n10    10     9     4     5     3     6     1\n# ℹ 30 more rows\n\n\n\nsummary(nums)\n\n       nu              so             so_L           so_J            ec        \n Min.   : 1.00   Min.   : 1.00   Min.   : 1.0   Min.   :0.00   Min.   : 0.000  \n 1st Qu.:10.75   1st Qu.: 6.75   1st Qu.: 3.0   1st Qu.:3.00   1st Qu.: 1.000  \n Median :20.50   Median : 9.00   Median : 4.0   Median :4.00   Median : 4.000  \n Mean   :20.50   Mean   : 8.25   Mean   : 4.2   Mean   :4.05   Mean   : 6.325  \n 3rd Qu.:30.25   3rd Qu.:10.00   3rd Qu.: 6.0   3rd Qu.:5.00   3rd Qu.: 9.000  \n Max.   :40.00   Max.   :13.00   Max.   :10.0   Max.   :7.00   Max.   :32.000  \n      ec_L             ec_J     \n Min.   : 0.000   Min.   : 0.0  \n 1st Qu.: 1.000   1st Qu.: 1.0  \n Median : 4.500   Median : 4.0  \n Mean   : 5.925   Mean   : 5.7  \n 3rd Qu.: 8.250   3rd Qu.: 9.0  \n Max.   :22.000   Max.   :27.0  \n\n\n\n2.3.1 Compter les boules\nVu que ces données changent à chaque tirage, il faudrait envisager une autre méthode pour identifier les numéros.\nD’un commun accord avec moi-même, j’ai choisi de classer les sorties et les écarts.\n\\(R\\) et dplyr fournissent de nombreuses fonctions de classement. On va utiliser min_rank().\n\na &lt;- tibble(N = c(55, 44, 33, 22, 11, 1, 11, 55, 66))\na &lt;- a |&gt; mutate(CL = min_rank(a$N))\na |&gt; arrange(CL)\n\n# A tibble: 9 × 2\n      N    CL\n  &lt;dbl&gt; &lt;int&gt;\n1     1     1\n2    11     2\n3    11     2\n4    22     4\n5    33     5\n6    44     6\n7    55     7\n8    55     7\n9    66     9\n\n\n\\(1\\) est la plus petite valeur et la plus grande valeur correspond au nombre de valeurs à classer.\nCi-dessus, la valeur \\(1\\) est classée première et les deux valeurs \\(11\\) sont classées deuxième. Mais la valeur \\(22\\) est classée quatrième puisqu’il y a deux valeurs classées deuxième. Etc.\nDonc classement.\n\nnumsCL &lt;- tibble(\n  nu = nums$nu,\n  so = min_rank(nums$so),\n  so_L = min_rank(nums$so_L),\n  so_J = min_rank(nums$so_J),\n  ec = min_rank(nums$ec),\n  ec_L = min_rank(nums$ec_L),\n  ec_J = min_rank(nums$ec_J)\n)\n\nnums\n\n# A tibble: 40 × 7\n      nu    so  so_L  so_J    ec  ec_L  ec_J\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     1     6     3     3     4     2     6\n 2     2    13     8     5     5     4     2\n 3     3    12     5     7    10     5     7\n 4     4     4     1     3     3    13     1\n 5     5     7     2     5    25    14    12\n 6     6     8     6     2     1     3     0\n 7     7     6     3     3     1     1     0\n 8     8     9     4     5    15     8     7\n 9     9     6     3     3     0     0     5\n10    10     9     4     5     3     6     1\n# ℹ 30 more rows\n\n\n\nnumsCL\n\n# A tibble: 40 × 7\n      nu    so  so_L  so_J    ec  ec_L  ec_J\n   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n 1     1     5     9     6    20    12    26\n 2     2    40    38    23    24    18    13\n 3     3    35    25    39    32    21    27\n 4     4     2     1     6    16    34     7\n 5     5    11     4    23    39    36    36\n 6     6    17    29     2     7    16     1\n 7     7     5     9     6     7     7     1\n 8     8    20    19    23    36    29    27\n 9     9     5     9     6     1     1    22\n10    10    20    19    23    16    23     7\n# ℹ 30 more rows\n\n\nEt pareil pour les numéros dreams\n\ndreamsCL &lt;- tibble(\n  nu = dreams$nu,\n  so = min_rank(dreams$so),\n  so_L = min_rank(dreams$so_L),\n  so_J = min_rank(dreams$so_J),\n  ec = min_rank(dreams$ec),\n  ec_L = min_rank(dreams$ec_L),\n  ec_J = min_rank(dreams$ec_J)\n)\n\ndreams\n\n# A tibble: 5 × 7\n     nu    so  so_L  so_J    ec  ec_L  ec_J\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     1    18     8    10     0     0     0\n2     2     8     3     5     7    11     3\n3     3     8     6     2     2     1     6\n4     4    10     6     4    10     5    11\n5     5    11     5     6     8     4     5\n\n\n\ndreamsCL\n\n# A tibble: 5 × 7\n     nu    so  so_L  so_J    ec  ec_L  ec_J\n  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1     1     5     5     5     1     1     1\n2     2     1     1     3     3     5     2\n3     3     1     3     1     2     2     4\n4     4     3     3     2     5     4     5\n5     5     4     2     4     4     3     3",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EuroDreams</span>"
+    ]
+  },
+  {
+    "objectID": "aide.html",
+    "href": "aide.html",
+    "title": "5  aide",
+    "section": "",
+    "text": "5.1 percent_rank(), cume_dist() et ntile()\nSource\nCes trois fonctions de fenêtre présentent une forte ressemblance. Leur explication repose sur la notion de centile . Un centile est une mesure utilisée en statistique pour désigner la valeur en dessous de laquelle se situe une fraction donnée des valeurs d’un ensemble. Le terme «  centile » est souvent privilégié par ceux qui préfèrent exprimer les fractions en pourcentage. Par exemple, le 70e centile est la valeur en dessous de laquelle se situent 70 % des valeurs.\nBrièvement:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>aide</span>"
+    ]
+  },
+  {
+    "objectID": "aide.html#percent_rank-cume_dist-et-ntile",
+    "href": "aide.html#percent_rank-cume_dist-et-ntile",
+    "title": "5  aide",
+    "section": "",
+    "text": "percent_rank()attribue la fraction centile à chaque valeur de la population d’entrée\ncume_dist() renvoie, pour une valeur spécifiée au sein d’une population, le nombre de valeurs inférieures ou égales à la valeur spécifiée divisé par le nombre total de valeurs, en d’autres termes, la position relative d’une valeur au sein de la population.\nntile()attribue le numéro de compartiment, dans un histogramme d’équihauteur (voir ci-dessous) à chaque valeur de la population en spécifiant le nombre de compartiments requis comme argument réel de la fonction.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>aide</span>"
+    ]
+  },
+  {
+    "objectID": "EuroDreams.html#essais",
+    "href": "EuroDreams.html#essais",
+    "title": "2  EuroDreams",
+    "section": "2.4 Essais",
+    "text": "2.4 Essais\nVu que ces données changent à chaque tirage, il faudrait envisager une autre méthode pour identifier les numéros.\nD’un commun accord avec moi-même, j’ai choisi de classer les sorties et les écarts.\n\\(R\\) et dplyr fournissent de nombreuses fonctions de classement. On va utiliser min_rank()`.\n\na &lt;- tibble(N = c(55, 44, 33, 22, 11, 1, 11, 55, 66))\na &lt;- a |&gt; mutate(CL = min_rank(a$N))\na |&gt; arrange(CL)\n\n# A tibble: 9 × 2\n      N    CL\n  &lt;dbl&gt; &lt;int&gt;\n1     1     1\n2    11     2\n3    11     2\n4    22     4\n5    33     5\n6    44     6\n7    55     7\n8    55     7\n9    66     9\n\n\n\\(1\\) est la plus petite valeur et la plus grande valeur correspond au nombre de valeurs à classer.\nCi-dessus, la valeur \\(1\\) est classée première et les deux valeurs \\(11\\) sont classées deuxième. Mais la valeur \\(22\\) est classée quatrième puisqu’il y a deux valeurs classées deuxième. Etc.\nDonc classement.\n\nnumsCL &lt;- tibble(\n  nu = nums$nu,\n  so = min_rank(nums$so),\n  so_L = min_rank(nums$so_L),\n  so_J = min_rank(nums$so_J),\n  ec = min_rank(nums$ec),\n  ec_L = min_rank(nums$ec_L),\n  ec_J = min_rank(nums$ec_J)\n)\n\nnums\n\n# A tibble: 40 × 7\n      nu    so  so_L  so_J    ec  ec_L  ec_J\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     1     6     3     3     3     1     6\n 2     2    13     8     5     4     3     2\n 3     3    12     5     7     9     4     7\n 4     4     4     1     3     2    12     1\n 5     5     7     2     5    24    13    12\n 6     6     8     6     2     0     2     0\n 7     7     6     3     3     0     0     0\n 8     8     9     4     5    14     7     7\n 9     9     5     2     3    10    12     5\n10    10     9     4     5     2     5     1\n# ℹ 30 more rows\n\n\n\nnumsCL\n\n# A tibble: 40 × 7\n      nu    so  so_L  so_J    ec  ec_L  ec_J\n   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n 1     1     6    10     6    16     7    26\n 2     2    40    39    23    21    15    13\n 3     3    37    26    39    30    19    27\n 4     4     2     1     6    12    33     7\n 5     5    12     4    23    39    36    36\n 6     6    17    30     2     1    12     1\n 7     7     6    10     6     1     1     1\n 8     8    20    20    23    36    28    27\n 9     9     5     4     6    31    33    22\n10    10    20    20    23    12    21     7\n# ℹ 30 more rows",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EuroDreams</span>"
+    ]
+  }
+]

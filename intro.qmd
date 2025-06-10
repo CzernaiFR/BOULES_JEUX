@@ -1,0 +1,16 @@
+---
+date: last-modified
+date-format: "dddd D MMMM YYYY"
+author:
+    name: "Roger MARTIN"
+    email: "czernai@gmail.com"
+---
+
+# Introduction
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+
+blahhhh

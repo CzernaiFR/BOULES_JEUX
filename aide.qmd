@@ -1,0 +1,32 @@
+---
+title: "aide"
+---
+
+## percent_rank(), cume_dist() et ntile()
+
+[Source]("https://docs.yugabyte.com/preview/api/ysql/exprs/window_functions/function-syntax-semantics/percent-rank-cume-dist-ntile/")
+
+Ces trois fonctions de fenêtre présentent une forte ressemblance. Leur explication repose sur la notion de centile . Un centile est une mesure utilisée en statistique pour désigner la valeur en dessous de laquelle se situe une fraction donnée des valeurs d'un ensemble. Le terme «  centile » est souvent privilégié par ceux qui préfèrent exprimer les fractions en pourcentage. Par exemple, le 70e centile est la valeur en dessous de laquelle se situent 70 % des valeurs.
+
+Brièvement:
+
+- `percent_rank()`attribue la fraction centile à chaque valeur de la population d'entrée
+- `cume_dist()` renvoie, pour une valeur spécifiée au sein d'une population, le nombre de valeurs inférieures ou égales à la valeur spécifiée divisé par le nombre total de valeurs, en d'autres termes, la position relative d'une valeur au sein de la population.
+- `ntile()`attribue le numéro de compartiment, dans un histogramme d'équihauteur (voir ci-dessous) à chaque valeur de la population en spécifiant le nombre de compartiments requis comme argument réel de la fonction.
+
+II
+```{r}
+load("dreams.RData")
+dreams
+```
+```{r}
+nums
+```
+
+```{r}
+
+a <- round(percent_rank(nums$so) * 100)
+names(a) <- as.character(nums$so)
+sort(a)
+```
+

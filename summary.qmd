@@ -1,0 +1,11 @@
+---
+date: last-modified
+date-format: "dddd D MMMM YYYY"
+author:
+    name: "Roger MARTIN"
+    email: "czernai@gmail.com"
+---
+
+# Summary
+
+In summary, this book has no content whatsoever.
